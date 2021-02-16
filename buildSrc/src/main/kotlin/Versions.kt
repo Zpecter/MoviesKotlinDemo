@@ -1,15 +1,13 @@
-package com.jfma75.buildsrc
-
 object Versions {
     const val ktlint = "0.39.0"
     private const val nav_release_version = "alpha03"
-    private const val compose_release_version = "alpha08"
+    private const val compose_release_version = "alpha12"
     const val kotlinVersion = "1.4.20"
     const val composeVersion = "1.0.0-$compose_release_version"
     const val navComposeVersion = "1.0.0-$nav_release_version"
     const val coroutinesVersion = "1.4.1"
     const val testsVersion = "1.2.0"
-    const val androidGradlePluginVersion = "7.0.0-alpha03"
+    const val androidGradlePluginVersion = "7.0.0-alpha06"
     const val dataStoreVersion = "1.0.0-alpha05"
     const val coreKtxVersion = "1.5.0-alpha04"
     const val appCompatVersion = "1.3.0-alpha02"

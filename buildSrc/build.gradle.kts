@@ -16,6 +16,7 @@
 
 repositories {
     jcenter()
+    google()
 }
 
 plugins {

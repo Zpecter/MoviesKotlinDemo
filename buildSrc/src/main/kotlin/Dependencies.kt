@@ -1,3 +1,19 @@
+import Versions.activityVersion
+import Versions.androidGradlePluginVersion
+import Versions.appCompatVersion
+import Versions.composeVersion
+import Versions.coreKtxVersion
+import Versions.coroutinesVersion
+import Versions.dataStoreVersion
+import Versions.espressoVersion
+import Versions.hiltVersion
+import Versions.jUnitVersion
+import Versions.kotlinVersion
+import Versions.lifecycleSavedstateVersion
+import Versions.lifecycleVersion
+import Versions.navComposeVersion
+import Versions.testsVersion
+
 /*
  * Copyright 2020 The Android Open Source Project
  *
@@ -13,24 +29,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package com.jfma75.buildsrc
-
-import com.jfma75.buildsrc.Versions.activityVersion
-import com.jfma75.buildsrc.Versions.androidGradlePluginVersion
-import com.jfma75.buildsrc.Versions.appCompatVersion
-import com.jfma75.buildsrc.Versions.composeVersion
-import com.jfma75.buildsrc.Versions.coreKtxVersion
-import com.jfma75.buildsrc.Versions.coroutinesVersion
-import com.jfma75.buildsrc.Versions.dataStoreVersion
-import com.jfma75.buildsrc.Versions.espressoVersion
-import com.jfma75.buildsrc.Versions.hiltVersion
-import com.jfma75.buildsrc.Versions.jUnitVersion
-import com.jfma75.buildsrc.Versions.kotlinVersion
-import com.jfma75.buildsrc.Versions.lifecycleSavedstateVersion
-import com.jfma75.buildsrc.Versions.lifecycleVersion
-import com.jfma75.buildsrc.Versions.navComposeVersion
-import com.jfma75.buildsrc.Versions.testsVersion
 
 object Libs {
     const val androidGradlePlugin = "com.android.tools.build:gradle:$androidGradlePluginVersion"
