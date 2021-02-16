@@ -1,6 +1,7 @@
 import Versions.activityVersion
 import Versions.androidGradlePluginVersion
 import Versions.appCompatVersion
+import Versions.composeActivityVersion
 import Versions.composeVersion
 import Versions.coreKtxVersion
 import Versions.coroutinesVersion
@@ -37,9 +38,9 @@ object Libs {
     const val hiltAndroidGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
 
     object Kotlin {
-        const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
-        const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
-        const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:${kotlinVersion}"
+        const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+        const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion"
     }
 
     object Coroutines {
@@ -70,19 +71,21 @@ object Libs {
         object Compose {
             const val snapshot = ""
 
-            const val animation = "androidx.compose.animation:animation:${composeVersion}"
-            const val animationCore = "androidx.compose.animation:animation-core:${composeVersion}"
-            const val compiler = "androidx.compose.compiler:compiler:${composeVersion}"
-            const val foundation = "androidx.compose.foundation:foundation:${composeVersion}"
+            const val activity = "androidx.activity:activity-compose:$composeActivityVersion"
+
+            const val animation = "androidx.compose.animation:animation:$composeVersion"
+            const val animationCore = "androidx.compose.animation:animation-core:$composeVersion"
+            const val compiler = "androidx.compose.compiler:compiler:$composeVersion"
+            const val foundation = "androidx.compose.foundation:foundation:$composeVersion"
             const val iconsCore = "androidx.compose.material:material-icons-core:$composeVersion"
             const val iconsExtended = "androidx.compose.material:material-icons-extended:$composeVersion"
-            const val layout = "androidx.compose.foundation:foundation-layout:${composeVersion}"
-            const val material = "androidx.compose.material:material:${composeVersion}"
+            const val layout = "androidx.compose.foundation:foundation-layout:$composeVersion"
+            const val material = "androidx.compose.material:material:$composeVersion"
             const val navigation = "androidx.navigation:navigation-compose:$navComposeVersion"
-            const val runtime = "androidx.compose.runtime:runtime:${composeVersion}"
-            const val tooling = "androidx.compose.ui:ui-tooling:${composeVersion}"
-            const val ui = "androidx.compose.ui:ui:${composeVersion}"
-            const val uiUtil = "androidx.compose.ui:ui-util:${composeVersion}"
+            const val runtime = "androidx.compose.runtime:runtime:$composeVersion"
+            const val tooling = "androidx.compose.ui:ui-tooling:$composeVersion"
+            const val ui = "androidx.compose.ui:ui:$composeVersion"
+            const val uiUtil = "androidx.compose.ui:ui-util:$composeVersion"
         }
 
         object Test {

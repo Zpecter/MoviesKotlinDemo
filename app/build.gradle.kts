@@ -36,8 +36,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility (JavaVersion.VERSION_11)
-        targetCompatibility (JavaVersion.VERSION_11)
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).configureEach {
@@ -58,6 +58,7 @@ dependencies {
     implementation (Libs.AndroidX.coreKtx)
 
     implementation (Libs.AndroidX.Compose.animation)
+    implementation (Libs.AndroidX.Compose.activity)
     implementation (Libs.AndroidX.Compose.foundation)
     implementation (Libs.AndroidX.Compose.iconsExtended)
     implementation (Libs.AndroidX.Compose.layout)

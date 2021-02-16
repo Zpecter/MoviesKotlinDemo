@@ -4,6 +4,7 @@ object Versions {
     private const val compose_release_version = "alpha12"
     const val kotlinVersion = "1.4.20"
     const val composeVersion = "1.0.0-$compose_release_version"
+    const val composeActivityVersion = "1.3.0-alpha01"
     const val navComposeVersion = "1.0.0-$nav_release_version"
     const val coroutinesVersion = "1.4.1"
     const val testsVersion = "1.2.0"

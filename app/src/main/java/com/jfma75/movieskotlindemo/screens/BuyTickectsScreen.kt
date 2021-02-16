@@ -14,9 +14,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -48,12 +47,12 @@ fun BuyTicketsScreen(navController: NavController, movieId: Long?) {
                     Text(
                         text = movie.name,
                         style = MaterialTheme.typography.subtitle1,
-                        color = AmbientContentColor.current
+                        color = LocalContentColor.current
                     )
                 },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack(navController.graph.startDestination, false) }) {
-                        Icon(Icons.Filled.ArrowBack)
+                        Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = "")
                     }
                 }
             )
@@ -77,7 +76,7 @@ fun HeaderView(movie: Movie) {
 
     Column(modifier = Modifier.padding(8.dp)) {
         Box(modifier = Modifier.preferredSize(height = 180.dp, width = 120.dp)) {
-            Image(imageResource(id = movie.imageId), Modifier.clip(shape = RoundedCornerShape(12.dp)), contentScale = ContentScale.Fit)
+            Image(painterResource(id = movie.imageId), contentDescription = "", Modifier.clip(shape = RoundedCornerShape(12.dp)), contentScale = ContentScale.Fit)
         }
     }
     Column(modifier = Modifier.padding(12.dp), horizontalAlignment = Alignment.Start) {

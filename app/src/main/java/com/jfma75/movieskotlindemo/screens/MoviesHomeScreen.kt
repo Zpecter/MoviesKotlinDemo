@@ -1,9 +1,7 @@
 package com.jfma75.movieskotlindemo.screens
 
-import androidx.compose.material.AmbientContentColor
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollableColumn
-import androidx.compose.material.Text
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
@@ -15,15 +13,15 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.LightGray
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
-import androidx.compose.ui.tooling.preview.Preview
 import com.jfma75.movieskotlindemo.models.Movie
 import com.jfma75.movieskotlindemo.movies
 import com.jfma75.movieskotlindemo.theme.lightThemeColors
@@ -37,7 +35,7 @@ fun MoviesHomeScreen(navController: NavHostController) {
                     Text(
                         text = "Kotlin Movies",
                         style = MaterialTheme.typography.subtitle1,
-                        color = AmbientContentColor.current
+                        color = LocalContentColor.current
                     )
                 }
             )
@@ -68,7 +66,8 @@ fun MovieView(movie: Movie, navController: NavHostController) {
     Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         Box(modifier = Modifier.preferredSize(width = 160.dp, height =  230.dp)) {
             Image(
-                imageResource(movie.imageId),
+                painterResource(movie.imageId),
+                contentDescription = "",
                 modifier = Modifier.clip(shape = RoundedCornerShape(12.dp)),
                 contentScale = ContentScale.Fit
             )
