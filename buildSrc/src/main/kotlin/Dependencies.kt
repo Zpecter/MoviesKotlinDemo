@@ -7,11 +7,13 @@ import Versions.coroutinesVersion
 import Versions.dataStoreVersion
 import Versions.espressoVersion
 import Versions.hiltVersion
+import Versions.jUnit
 import Versions.jUnitVersion
 import Versions.kotlinVersion
 import Versions.lifecycleSavedstateVersion
 import Versions.lifecycleVersion
 import Versions.navComposeVersion
+import Versions.navigationVersion
 import Versions.testsVersion
 
 /*
@@ -86,12 +88,14 @@ object Libs {
         object Test {
             const val core = "androidx.test:core:$testsVersion"
             const val rules = "androidx.test:rules:$testsVersion"
+            const val junit = "junit:junit:$jUnit"
 
             object Ext {
                 const val junit = "androidx.test.ext:junit-ktx:$jUnitVersion"
             }
 
             const val espressoCore = "androidx.test.espresso:espresso-core:$espressoVersion"
+            const val navigation = "androidx.navigation:navigation-testing:$navigationVersion"
         }
     }
 }

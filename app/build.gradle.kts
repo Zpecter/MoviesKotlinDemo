@@ -49,9 +49,9 @@ android {
 dependencies {
     //implementation(fileTree("libs") { include(listOf("*.jar")) })
 
-    implementation(Libs.Kotlin.stdlib)
-    implementation(Libs.Coroutines.android)
-    implementation(Libs.Coroutines.core)
+    implementation (Libs.Kotlin.stdlib)
+    implementation (Libs.Coroutines.android)
+    implementation (Libs.Coroutines.core)
 
     implementation (Libs.AndroidX.appCompat)
     implementation (Libs.AndroidX.activity)
@@ -61,11 +61,11 @@ dependencies {
     implementation (Libs.AndroidX.Compose.foundation)
     implementation (Libs.AndroidX.Compose.iconsExtended)
     implementation (Libs.AndroidX.Compose.layout)
-    //implementation Libs.AndroidX.Compose.material
+    implementation (Libs.AndroidX.Compose.material)
     implementation (Libs.AndroidX.Compose.navigation)
     implementation (Libs.AndroidX.Compose.ui)
-    //implementation (Libs.AndroidX.Compose.runtime)
-    //implementation (Libs.AndroidX.Compose.tooling)
+    implementation (Libs.AndroidX.Compose.runtime)
+    implementation (Libs.AndroidX.Compose.tooling)
 
     implementation (Libs.AndroidX.datastore)
 
@@ -78,8 +78,8 @@ dependencies {
     implementation (Libs.Android.hilt)
     kapt (Libs.Android.hiltCompiler)
 
-    testImplementation ("junit:junit:4.13.1")
-    androidTestImplementation ("androidx.test.ext:junit:1.1.2")
-    androidTestImplementation ("androidx.test.espresso:espresso-core:3.3.0")
-    androidTestImplementation ("androidx.navigation:navigation-testing:2.3.3")
+    testImplementation (Libs.AndroidX.Test.junit)
+    androidTestImplementation (Libs.AndroidX.Test.Ext.junit)
+    androidTestImplementation (Libs.AndroidX.Test.espressoCore)
+    androidTestImplementation (Libs.AndroidX.Test.navigation)
 }

@@ -16,7 +16,8 @@ object Versions {
     const val lifecycleVersion = "2.2.0"
     const val lifecycleSavedstateVersion = "2.3.0-beta01"
 
-    const val jUnit = "4.13"
-    const val jUnitVersion = "1.1.2-rc01"
+    const val jUnit = "4.13.1"
+    const val jUnitVersion = "1.1.2"
     const val espressoVersion = "3.2.0"
+    const val navigationVersion = "2.3.3"
 }
