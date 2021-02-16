@@ -13,7 +13,7 @@ import Versions.jUnitVersion
 import Versions.kotlinVersion
 import Versions.lifecycleSavedstateVersion
 import Versions.lifecycleVersion
-import Versions.navComposeVersion
+import Versions.composeNavigationVersion
 import Versions.navigationVersion
 import Versions.testsVersion
 
@@ -81,7 +81,7 @@ object Libs {
             const val iconsExtended = "androidx.compose.material:material-icons-extended:$composeVersion"
             const val layout = "androidx.compose.foundation:foundation-layout:$composeVersion"
             const val material = "androidx.compose.material:material:$composeVersion"
-            const val navigation = "androidx.navigation:navigation-compose:$navComposeVersion"
+            const val navigation = "androidx.navigation:navigation-compose:$composeNavigationVersion"
             const val runtime = "androidx.compose.runtime:runtime:$composeVersion"
             const val tooling = "androidx.compose.ui:ui-tooling:$composeVersion"
             const val ui = "androidx.compose.ui:ui:$composeVersion"
