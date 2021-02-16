@@ -95,7 +95,7 @@ fun NavigateBackButton(navController: NavController) {
     if (navController.previousBackStackEntry != null) {
         Button(
             onClick = { navController.popBackStack() },
-            colors = ButtonConstants.defaultButtonColors(backgroundColor = LightGray),
+            colors = ButtonDefaults.buttonColors(backgroundColor = LightGray),
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(text = "Go to Previous screen")

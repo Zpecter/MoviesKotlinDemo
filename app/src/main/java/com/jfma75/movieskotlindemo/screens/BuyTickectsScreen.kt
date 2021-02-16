@@ -153,7 +153,7 @@ fun DayButtonView(day: Date) {
     Button(
         onClick = { selectedDate = day },
         shape = RoundedCornerShape(12.dp),
-        colors = ButtonConstants.defaultButtonColors(backgroundColor = when {
+        colors = ButtonDefaults.buttonColors(backgroundColor = when {
                 day.formatToViewDateDefaults() == selectedDate.formatToViewDateDefaults() -> { colors.primary }
                 else -> { colors.secondary }
             }
