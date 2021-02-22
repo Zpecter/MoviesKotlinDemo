@@ -1,7 +1,10 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     id ("com.android.application")
     id ("kotlin-android")
     id ("kotlin-kapt")
+    id ("kotlin-parcelize")
     id ("dagger.hilt.android.plugin")
 }
 
@@ -13,7 +16,7 @@ android {
         applicationId = "com.jfma75.movieskotlindemo"
         minSdkVersion (23)
         targetSdkVersion (30)
-        versionCode =1
+        versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -31,7 +34,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerVersion = Versions.kotlinVersion
+        //kotlinCompilerVersion = Versions.kotlinVersion
         kotlinCompilerExtensionVersion = Versions.composeVersion
     }
 
@@ -40,9 +43,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
-    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).configureEach {
+    tasks.withType(KotlinCompile::class).configureEach {
+        kotlinOptions.useIR = true
         kotlinOptions.jvmTarget = "11"
-        kotlinOptions.freeCompilerArgs += "-Xallow-jvm-ir-dependencies" + "-Xskip-prerelease-check"
+        //kotlinOptions.freeCompilerArgs += "-Xallow-jvm-ir-dependencies" + "-Xskip-prerelease-check"
     }
 }
 
