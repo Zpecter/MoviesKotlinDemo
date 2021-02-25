@@ -1,11 +1,11 @@
 object Versions {
     const val ktlint = "0.39.0"
-    private const val composeNavigation = "alpha07"
+    private const val composeNavigation = "alpha08"
     private const val compose_release_version = "beta01"
     const val kotlinVersion = "1.4.30"
 
     const val composeVersion = "1.0.0-$compose_release_version"
-    const val composeActivityVersion = "1.3.0-alpha02"
+    const val composeActivityVersion = "1.3.0-alpha03"
     const val composeNavigationVersion = "1.0.0-$composeNavigation"
 
     const val coroutinesVersion = "1.4.1"
