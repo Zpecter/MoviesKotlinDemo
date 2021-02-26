@@ -45,7 +45,7 @@ android {
 
     tasks.withType(KotlinCompile::class).configureEach {
         kotlinOptions.useIR = true
-        kotlinOptions.jvmTarget = "11"
+        kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
         //kotlinOptions.freeCompilerArgs += "-Xallow-jvm-ir-dependencies" + "-Xskip-prerelease-check"
     }
 }

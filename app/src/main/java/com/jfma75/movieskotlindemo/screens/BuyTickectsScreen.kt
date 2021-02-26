@@ -57,7 +57,7 @@ fun BuyTicketsScreen(navController: NavController, movieId: Long?) {
                 }
             )
         },
-        bodyContent = {
+        content = {
             Column(modifier = Modifier.fillMaxSize()) {
                 Row(Modifier.fillMaxWidth()) {
                     HeaderView(movie = movie)
@@ -75,7 +75,7 @@ fun HeaderView(movie: Movie) {
     val colors = MaterialTheme.colors
 
     Column(modifier = Modifier.padding(8.dp)) {
-        Box(modifier = Modifier.preferredSize(height = 180.dp, width = 120.dp)) {
+        Box(modifier = Modifier.requiredSize(height = 180.dp, width = 120.dp)) {
             Image(painterResource(id = movie.imageId), contentDescription = "", Modifier.clip(shape = RoundedCornerShape(12.dp)), contentScale = ContentScale.Fit)
         }
     }
@@ -83,7 +83,7 @@ fun HeaderView(movie: Movie) {
         Text(text = movie.name, style = MaterialTheme.typography.h6)
         Text(text = movie.genre, style = MaterialTheme.typography.body1)
 
-        Spacer(Modifier.preferredHeight(16.dp))
+        Spacer(Modifier.requiredHeight(16.dp))
 
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceAround) {
             Button(onClick = {}, shape = RoundedCornerShape(8.dp)) {
@@ -134,7 +134,7 @@ fun CalendarView() {
     Column(modifier = Modifier.padding(8.dp)) {
         Text(text = "Select Date", style = MaterialTheme.typography.h5)
         days.forEach { row ->
-            Spacer(Modifier.preferredHeight(16.dp))
+            Spacer(Modifier.requiredHeight(16.dp))
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceAround) {
                 row.forEach { day ->
                     if (day != null) {
@@ -158,7 +158,7 @@ fun DayButtonView(day: Date) {
                 else -> { colors.secondary }
             }
         ),
-        modifier = Modifier.preferredSize(width = 70.dp, height = 90.dp).padding(0.dp)
+        modifier = Modifier.requiredSize(width = 70.dp, height = 90.dp).padding(0.dp)
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.fillMaxSize()) {
             Text(
@@ -180,7 +180,7 @@ fun DayButtonView(day: Date) {
                     )
                 )
             )
-            Spacer(Modifier.preferredHeight(8.dp))
+            Spacer(Modifier.requiredHeight(8.dp))
             Text(
                 text = day.formatToViewDateDefaults("dd").toUpperCase(Locale.ROOT),
                 modifier = Modifier.align(Alignment.CenterHorizontally),
@@ -200,7 +200,7 @@ fun DayButtonView(day: Date) {
                     )
                 )
             )
-            Spacer(Modifier.preferredHeight(8.dp))
+            Spacer(Modifier.requiredHeight(8.dp))
             Text(
                 text = day.formatToViewDateDefaults("EEEE").toUpperCase(Locale.ROOT),
                 modifier = Modifier.wrapContentSize(align = Alignment.Center),

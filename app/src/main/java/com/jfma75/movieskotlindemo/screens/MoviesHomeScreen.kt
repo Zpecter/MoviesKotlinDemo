@@ -1,8 +1,9 @@
 package com.jfma75.movieskotlindemo.screens
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -40,7 +41,7 @@ fun MoviesHomeScreen(navController: NavHostController) {
                 }
             )
         },
-        bodyContent = {
+        content = {
             HomeScreenContent(navController)
         }
     )
@@ -48,13 +49,11 @@ fun MoviesHomeScreen(navController: NavHostController) {
 
 @Composable
 fun HomeScreenContent(navController: NavHostController) {
-    ScrollableColumn {
-        Column {
-            movies.forEach { row ->
-                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
-                    row.forEach { movie ->
-                        MovieView(movie, navController)
-                    }
+    Column {
+        movies.forEach { row ->
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+                row.forEach { movie ->
+                    MovieView(movie, navController)
                 }
             }
         }
@@ -64,7 +63,7 @@ fun HomeScreenContent(navController: NavHostController) {
 @Composable
 fun MovieView(movie: Movie, navController: NavHostController) {
     Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-        Box(modifier = Modifier.preferredSize(width = 160.dp, height =  230.dp)) {
+        Box(modifier = Modifier.requiredSize(width = 160.dp, height =  230.dp)) {
             Image(
                 painterResource(movie.imageId),
                 contentDescription = "",
@@ -72,12 +71,12 @@ fun MovieView(movie: Movie, navController: NavHostController) {
                 contentScale = ContentScale.Fit
             )
         }
-        Spacer(Modifier.preferredHeight(8.dp))
+        Spacer(Modifier.requiredHeight(8.dp))
         Text(
             text = movie.name,
             style = MaterialTheme.typography.body1
         )
-        Spacer(Modifier.preferredHeight(8.dp))
+        Spacer(Modifier.requiredHeight(8.dp))
         Button(
             modifier = Modifier.shadow(elevation = 12.dp, shape = RoundedCornerShape(8.dp), clip = true),
             onClick = { navController.navigate("BuyTickets/${movie.id}L") }
