@@ -38,7 +38,7 @@ var selectedDate by mutableStateOf(Date())
 
 @Composable
 fun BuyTicketsScreen(navController: NavController, movieId: Long?) {
-    val movie = movies.flatten().first { movie -> movie.id == movieId }
+    val movie = movies.first { movie -> movie.id == movieId }
 
     Scaffold(
         topBar = {
@@ -230,7 +230,7 @@ fun DayButtonView(day: Date) {
 fun BuyTickets_Preview() {
     MaterialTheme(colors = lightThemeColors) {
         val navController = rememberNavController()
-        BuyTicketsScreen(navController, movies.flatten().first().id)
+        BuyTicketsScreen(navController, movies.first().id)
     }
     /*MaterialTheme(colors = darkThemeColors) {
         BuyTicketsScreen(movies.flatten().first().id, {})

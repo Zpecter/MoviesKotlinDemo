@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.Composable
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -18,24 +19,17 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 var movies = listOf(
-    listOf(
         Movie(0, "Deadpool 2", "Action", R.drawable.deadpool_2),
-        Movie(1, "The Shape of Water", "Drama|Fantasy", R.drawable.shape_of_water)
-    ),
-    listOf(
+        Movie(1, "The Shape of Water", "Drama|Fantasy", R.drawable.shape_of_water),
         Movie(2, "Jurassic World", "Action", R.drawable.jurassic_world),
-        Movie(3, "Tomb Raider", "Action", R.drawable.tomb_raider)
-    ),
-    listOf(
+        Movie(3, "Tomb Raider", "Action", R.drawable.tomb_raider),
         Movie(4, "Deadpool 2", "Action", R.drawable.deadpool_2),
-        Movie(5, "The Shape of Water", "Drama|Fantasy", R.drawable.shape_of_water)
-    ),
-    listOf(
+        Movie(5, "The Shape of Water", "Drama|Fantasy", R.drawable.shape_of_water),
         Movie(6, "Jurassic World", "Action", R.drawable.jurassic_world),
         Movie(7, "Tomb Raider", "Action", R.drawable.tomb_raider)
-    )
 )
 
+@ExperimentalFoundationApi
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     @Inject
@@ -50,6 +44,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
+@ExperimentalFoundationApi
 @Composable
 fun App() {
     AppTheme {
@@ -57,6 +52,7 @@ fun App() {
     }
 }
 
+@ExperimentalFoundationApi
 @Composable
 private fun AppContent() {
     val navController = rememberNavController()

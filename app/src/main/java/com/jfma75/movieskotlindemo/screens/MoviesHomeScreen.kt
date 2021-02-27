@@ -1,8 +1,12 @@
 package com.jfma75.movieskotlindemo.screens
 
+import android.util.Log
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
@@ -27,6 +31,7 @@ import com.jfma75.movieskotlindemo.models.Movie
 import com.jfma75.movieskotlindemo.movies
 import com.jfma75.movieskotlindemo.theme.lightThemeColors
 
+@ExperimentalFoundationApi
 @Composable
 fun MoviesHomeScreen(navController: NavHostController) {
     Scaffold(
@@ -47,23 +52,24 @@ fun MoviesHomeScreen(navController: NavHostController) {
     )
 }
 
+@ExperimentalFoundationApi
 @Composable
 fun HomeScreenContent(navController: NavHostController) {
-    Column {
-        movies.forEach { row ->
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
-                row.forEach { movie ->
-                    MovieView(movie, navController)
-                }
+    LazyVerticalGrid(
+        cells = GridCells.Fixed(2),
+        content = {
+            items(movies.size) { index ->
+                val movie = movies[index] ?: return@items
+                MovieView(movie, navController)
             }
         }
-    }
+    )
 }
 
 @Composable
 fun MovieView(movie: Movie, navController: NavHostController) {
     Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-        Box(modifier = Modifier.size(width = 160.dp, height =  230.dp)) {
+        Box(modifier = Modifier.size(width = 160.dp, height = 230.dp)) {
             Image(
                 painterResource(movie.imageId),
                 contentDescription = "",
@@ -104,6 +110,7 @@ fun NavigateBackButton(navController: NavController) {
 
 @Preview
 @Composable
+@ExperimentalFoundationApi
 fun MoviesHomeScreen_Preview() {
     MaterialTheme(colors = lightThemeColors) {
         val navController = rememberNavController()
