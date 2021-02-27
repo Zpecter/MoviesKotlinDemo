@@ -63,7 +63,7 @@ fun HomeScreenContent(navController: NavHostController) {
 @Composable
 fun MovieView(movie: Movie, navController: NavHostController) {
     Column(modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-        Box(modifier = Modifier.requiredSize(width = 160.dp, height =  230.dp)) {
+        Box(modifier = Modifier.size(width = 160.dp, height =  230.dp)) {
             Image(
                 painterResource(movie.imageId),
                 contentDescription = "",
@@ -71,12 +71,12 @@ fun MovieView(movie: Movie, navController: NavHostController) {
                 contentScale = ContentScale.Fit
             )
         }
-        Spacer(Modifier.requiredHeight(8.dp))
+        Spacer(Modifier.height(8.dp))
         Text(
             text = movie.name,
             style = MaterialTheme.typography.body1
         )
-        Spacer(Modifier.requiredHeight(8.dp))
+        Spacer(Modifier.height(8.dp))
         Button(
             modifier = Modifier.shadow(elevation = 12.dp, shape = RoundedCornerShape(8.dp), clip = true),
             onClick = { navController.navigate("BuyTickets/${movie.id}L") }
