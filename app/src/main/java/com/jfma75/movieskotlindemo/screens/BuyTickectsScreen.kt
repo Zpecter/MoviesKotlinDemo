@@ -1,7 +1,6 @@
 package com.jfma75.movieskotlindemo.screens
 
 import androidx.compose.foundation.Image
-import androidx.compose.material.Text
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
@@ -228,11 +227,11 @@ fun DayButtonView(day: Date) {
 @Preview
 @Composable
 fun BuyTickets_Preview() {
+    val navController = rememberNavController()
     MaterialTheme(colors = lightThemeColors) {
-        val navController = rememberNavController()
         BuyTicketsScreen(navController, movies.first().id)
     }
-    /*MaterialTheme(colors = darkThemeColors) {
-        BuyTicketsScreen(movies.flatten().first().id, {})
+   /* MaterialTheme(colors = darkThemeColors) {
+        BuyTicketsScreen(navController, movies.first().id)
     }*/
 }
