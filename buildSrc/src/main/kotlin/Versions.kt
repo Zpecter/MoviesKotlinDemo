@@ -10,14 +10,14 @@ object Versions {
 
     const val coroutinesVersion = "1.4.1"
 
-
     const val androidGradlePluginVersion = "7.0.0-alpha08"
 
     const val activityVersion = "1.2.0-beta02"
     const val appCompatVersion = "1.3.0-alpha02"
+    const val composeConstraintVersion = "1.0.0-alpha03"
     const val coreKtxVersion = "1.5.0-alpha04"
     const val dataStoreVersion = "1.0.0-alpha05"
-    const val hiltVersion = "2.29.1-alpha"
+    const val hiltVersion = "2.33-beta"
     const val lifecycleVersion = "2.2.0"
     const val lifecycleSavedstateVersion = "2.3.0-beta01"
 

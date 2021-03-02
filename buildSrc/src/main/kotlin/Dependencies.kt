@@ -2,6 +2,8 @@ import Versions.activityVersion
 import Versions.androidGradlePluginVersion
 import Versions.appCompatVersion
 import Versions.composeActivityVersion
+import Versions.composeConstraintVersion
+import Versions.composeNavigationVersion
 import Versions.composeVersion
 import Versions.coreKtxVersion
 import Versions.coroutinesVersion
@@ -13,7 +15,6 @@ import Versions.jUnitVersion
 import Versions.kotlinVersion
 import Versions.lifecycleSavedstateVersion
 import Versions.lifecycleVersion
-import Versions.composeNavigationVersion
 import Versions.navigationVersion
 import Versions.testsVersion
 
@@ -72,6 +73,7 @@ object Libs {
             const val snapshot = ""
 
             const val activity = "androidx.activity:activity-compose:$composeActivityVersion"
+            const val constraint = "androidx.activity:activity-compose:$composeConstraintVersion"
 
             const val animation = "androidx.compose.animation:animation:$composeVersion"
             const val animationCore = "androidx.compose.animation:animation-core:$composeVersion"

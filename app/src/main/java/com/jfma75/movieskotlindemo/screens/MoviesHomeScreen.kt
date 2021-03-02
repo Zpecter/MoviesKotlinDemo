@@ -92,19 +92,6 @@ fun MovieView(movie: Movie, navController: NavHostController) {
     }
 }
 
-@Composable
-fun NavigateBackButton(navController: NavController) {
-    if (navController.previousBackStackEntry != null) {
-        Button(
-            onClick = { navController.popBackStack() },
-            colors = ButtonDefaults.buttonColors(backgroundColor = LightGray),
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(text = "Go to Previous screen")
-        }
-    }
-}
-
 @Preview
 @Composable
 @ExperimentalFoundationApi
