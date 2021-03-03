@@ -30,7 +30,7 @@ import com.jfma75.movieskotlindemo.theme.lightThemeColors
 import java.util.*
 
 /**
- * @sample com.jfma75.movieskotlindemo.BuyTickets_Preview
+ * @sample com.jfma75.movieskotlindemo.screens.BuyTickets_Preview
  * */
 
 var selectedDate by mutableStateOf(Date())
@@ -55,18 +55,17 @@ fun BuyTicketsScreen(navController: NavController, movieId: Long?) {
                     }
                 }
             )
-        },
-        content = {
-            Column(modifier = Modifier.fillMaxSize()) {
-                Row(Modifier.fillMaxWidth()) {
-                    HeaderView(movie = movie)
-                }
-                Row(Modifier.fillMaxWidth()) {
-                    CalendarView()
-                }
+        }
+    ) {
+        Column(modifier = Modifier.fillMaxSize()) {
+            Row(Modifier.fillMaxWidth()) {
+                HeaderView(movie = movie)
+            }
+            Row(Modifier.fillMaxWidth()) {
+                CalendarView()
             }
         }
-    )
+    }
 }
 
 @Composable

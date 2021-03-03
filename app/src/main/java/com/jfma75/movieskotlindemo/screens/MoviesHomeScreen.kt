@@ -26,6 +26,10 @@ import com.jfma75.movieskotlindemo.models.Movie
 import com.jfma75.movieskotlindemo.movies
 import com.jfma75.movieskotlindemo.theme.lightThemeColors
 
+/**
+ * @sample com.jfma75.movieskotlindemo.screens.MoviesHomeScreen_Preview
+ * */
+
 @ExperimentalFoundationApi
 @Composable
 fun MoviesHomeScreen(navController: NavHostController) {
@@ -40,25 +44,22 @@ fun MoviesHomeScreen(navController: NavHostController) {
                     )
                 }
             )
-        },
-        content = {
-            HomeScreenContent(navController)
-        }
-    )
+        }) {
+        HomeScreenContent(navController)
+    }
 }
 
 @ExperimentalFoundationApi
 @Composable
 fun HomeScreenContent(navController: NavHostController) {
     LazyVerticalGrid(
-        cells = GridCells.Fixed(2),
-        content = {
-            items(movies.size) { index ->
-                val movie = movies[index]
-                MovieView(movie, navController)
-            }
+        cells = GridCells.Fixed(2)
+    ) {
+        items(movies.size) { index ->
+            val movie = movies[index]
+            MovieView(movie, navController)
         }
-    )
+    }
 }
 
 @Composable
