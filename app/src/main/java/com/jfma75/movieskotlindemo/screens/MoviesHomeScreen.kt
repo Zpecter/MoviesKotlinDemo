@@ -13,14 +13,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Color.Companion.LightGray
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
@@ -56,7 +54,7 @@ fun HomeScreenContent(navController: NavHostController) {
         cells = GridCells.Fixed(2),
         content = {
             items(movies.size) { index ->
-                val movie = movies[index] ?: return@items
+                val movie = movies[index]
                 MovieView(movie, navController)
             }
         }
